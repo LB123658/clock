@@ -3,8 +3,8 @@
 	"short_name":"Clock",
 	"start_url":"index.html",
 	"display":"standalone",
-	"background_color":"#fff",
-	"theme_color":"#fff",
+	"background_color":"black",
+	"theme_color":"black",
 	"scope": ".",
 	"description":"Check the time.",
 	"icons":[
