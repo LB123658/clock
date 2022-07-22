@@ -16,8 +16,15 @@ font-family: "Roboto Mono", arial;
 }
 #clock {
 margin-top: 15%;
-font-size: 4rem;
+font-size: 5rem;
 text-align: center;
+}
+@keyframes fade {
+0% {background: white}
+25% {background: lightgreen}
+50% {background: lightblue}
+75% {background: pink}
+100% {background: white}
 }
 </style>
 </head>
@@ -44,7 +51,7 @@ function showTime() {
     document.body.style.background = "black";
     clock.style.color = "white";
   } else {
-    document.body.style.background = "white";
+    document.body.style.animation = "20s fade infinite";
     clock.style.color = "black";
   } 
 }
