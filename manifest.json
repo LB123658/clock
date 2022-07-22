@@ -1,0 +1,22 @@
+{
+	"name":"Clock",
+	"short_name":"Clock",
+	"start_url":"index.html",
+	"display":"standalone",
+	"background_color":"#fff",
+	"theme_color":"#fff",
+	"scope": ".",
+	"description":"Check the time.",
+	"icons":[
+	{
+	"src":"images/icon-192x192.png",					
+	"sizes":"192x192",
+	"type":"image/png"
+	},
+	{
+	"src":"images/icon-512x512.png",
+	"sizes":"512x512",
+	"type":"image/png"
+	}
+]
+}

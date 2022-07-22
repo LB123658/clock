@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"><link rel="icon" href="images/favicon.png" type="image/png"/>
+<link rel="manifest" href="manifest.json">
+<title>Clock</title>
+<style>
+body {
+overflow: hidden;
+user-select: none;
+-webkit-user-select: none;
+cursor: default;
+font-family: "Roboto Mono", arial;
+}
+#clock {
+margin-top: 15%;
+font-size: 4rem;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 id="clock">Unable to load time</h1>
+
+<script>
+var clock = document.getElementById("clock");
+setInterval(showTime, 1000);
+var colon = ":";
+function showTime() {
+  const d = new Date();
+  let h = d.getHours();
+  let m = d.getMinutes();
+  let s = d.getSeconds();
+  h = checkTime(h);
+  m = checkTime(m);
+  clock.innerHTML = h + ":" + m;
+
+  if (h < 7) {
+    document.body.style.background = "black";
+    clock.style.color = "white";
+  } else if (h > 20) {
+    document.body.style.background = "black";
+    clock.style.color = "white";
+  } else {
+    document.body.style.background = "white";
+    clock.style.color = "black";
+  } 
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};
+  return i;
+}
+showTime();
+
+
+// pwa part
+	window.addEventListener('load', () => {
+	registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+		await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+		}
+		catch (e) {
+		console.log('SW registration failed');
+		}
+	}
+	}
+</script>
+</body>
+</html>
